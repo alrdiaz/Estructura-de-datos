@@ -1,0 +1,356 @@
+<div class="card bg-dark text-white">
+  <div class="card-header">{{ tittle }}</div>
+  <div class="card-body">
+    <br />
+    <form>
+      <!-- cedula -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Cédula</label>
+        <div class="col-sm-6">
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="cliente.nmid"
+            name="nmid"
+            required
+          />
+        </div>
+      </div>
+      <!-- fin cedula  -->
+      <!-- cus_dsnombres  -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Nombres</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="cliente.cus_dsnombres"
+            name="cus_dsnombres"
+          />
+        </div>
+      </div>
+      <!-- fin cus_dsnombres  -->
+      <!-- cus_dsapellidos  -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Apellidos</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="cliente.cus_dsapellidos"
+            name="cus_dsapellidos"
+          />
+        </div>
+      </div>
+      <!-- fin cus_dsapellidos  -->
+      <!-- cus_dsdireccion  -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Dirección</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="cliente.cus_dsdireccion"
+            name="cus_dsdireccion"
+          />
+        </div>
+      </div>
+      <!-- fin cus_dsdireccion  -->
+      <!-- cus_dscorreo  -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Email</label>
+        <div class="col-sm-6">
+          <input
+            type="email"
+            class="form-control"
+            [(ngModel)]="cliente.cus_dscorreo"
+            name="cus_dscorreo"
+          />
+        </div>
+      </div>
+      <!-- fin cus_dscorreo  -->
+      <!-- cus_cdtelefono  -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Teléfono</label>
+        <div class="col-sm-6">
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="cliente.cus_cdtelefono"
+            name="cus_cdtelefono"
+          />
+        </div>
+      </div>
+      <!-- fin cus_cdtelefono  -->
+      <!-- cus_cdtelefonoalter  -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2"
+          >Teléfono alternativo</label
+        >
+        <div class="col-sm-6">
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="cliente.cus_cdtelefonoalter"
+            name="cus_cdtelefonoalter"
+          />
+        </div>
+      </div>
+      <!-- fin cus_cdtelefonoalter  -->
+      <!-- cus_cdcelular  -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Teléfono celular</label>
+        <div class="col-sm-6">
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="cliente.cus_cdcelular"
+            name="cus_cdcelular"
+          />
+        </div>
+      </div>
+      <!-- fin cus_cdcelular  -->
+      <!-- cus_nmcargo  -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Número Cargo</label>
+        <div class="col-sm-6">
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="cliente.cus_nmcargo"
+            name="cus_nmcargo"
+          />
+        </div>
+      </div>
+      <!-- fin cus_nmcargo  -->
+      <!-- cus_dscargo  -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Cargo</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="cliente.cus_dscargo"
+            name="cus_dscargo"
+          />
+        </div>
+      </div>
+      <!-- fin cus_dscargo  -->
+      <!-- cus_nmciudad  -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2"
+          >Número Ciudad (zipcode)</label
+        >
+        <div class="col-sm-6">
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="cliente.cus_nmciudad"
+            name="cus_nmciudad"
+          />
+        </div>
+      </div>
+      <!-- fin cus_nmciudad  -->
+      <!-- cus_dsciudad  -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Ciudad</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="cliente.cus_dsciudad"
+            name="cus_dsciudad"
+          />
+        </div>
+      </div>
+      <!-- fin cus_dsciudad  -->
+      <!-- cus_fenacimiento  -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2"
+          >Fecha de nacimiento</label
+        >
+        <div class="col-sm-6">
+          <input
+            type="date"
+            class="form-control"
+            [(ngModel)]="cliente.cus_fenacimiento"
+            name="cus_fenacimiento"
+          />
+        </div>
+      </div>
+      <!-- fin cus_fenacimiento  -->
+      <!-- cus_genero  -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Genero</label>
+        <div class="col-sm-2">
+          <input
+            class="form-check-input"
+            type="radio"
+            [(ngModel)]="cliente.cus_genero"
+            name="cus_genero"
+            value="M"
+          />Masculino
+        </div>
+        <div class="col-sm-2">
+          <input
+            type="radio"
+            class="form-check-input"
+            [(ngModel)]="cliente.cus_genero"
+            name="cus_genero"
+            value="F"
+          />Femenino
+        </div>
+        <div class="col-sm-2">
+          <input
+            type="radio"
+            class="form-check-input"
+            [(ngModel)]="cliente.cus_genero"
+            name="cus_genero"
+            value="O"
+          />Otro
+        </div>
+      </div>
+      <!-- fin cus_genero  -->
+      <!-- cus_nmcomunidad  -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Número Comunidad</label>
+        <div class="col-sm-6">
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="cliente.cus_nmcomunidad"
+            name="cus_nmcomunidad"
+          />
+        </div>
+      </div>
+      <!-- fin cus_nmcomunidad -->
+      <!-- cus_dscomunidad  -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Comunidad</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="cliente.cus_dscomunidad"
+            name="cus_dscomunidad"
+          />
+        </div>
+      </div>
+      <!-- fin cus_dscomunidad  -->
+      <!-- cus_dsempresalabora  -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Empresa</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="cliente.cus_dsempresalabora"
+            name="cus_dsempresalabora"
+          />
+        </div>
+      </div>
+      <!-- fin cus_dsempresalabora  -->
+      <!-- cus_nmdivision  -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Número División</label>
+        <div class="col-sm-6">
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="cliente.cus_nmdivision"
+            name="cus_nmdivision"
+          />
+        </div>
+      </div>
+      <!-- fin cus_nmdivision -->
+      <!-- cus_dsdivision -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">División</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="cliente.cus_dsdivision"
+            name="cus_dsdivision"
+          />
+        </div>
+      </div>
+      <!-- fin cus_dsdivision  -->
+      <!-- cus_nmpais  -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Número País</label>
+        <div class="col-sm-6">
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="cliente.cus_nmpais"
+            name="cus_nmpais"
+          />
+        </div>
+      </div>
+      <!-- fin cus_nmpais -->
+      <!-- cus_dspais -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">País</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="cliente.cus_dspais"
+            name="cus_dspais"
+          />
+        </div>
+      </div>
+      <!-- fin cus_dspais  -->
+      <!-- cus_hobbies -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Hobbies</label>
+        <div class="col-sm-6">
+          <textarea
+            class="form-control"
+            [(ngModel)]="cliente.cus_hobbies"
+            name="cus_hobbies"
+          ></textarea>
+        </div>
+      </div>
+      <!-- fin cus_hobbies  -->
+
+      <!-- cus_fecha de baja  -->
+      <div class="form-group row">
+        <label for="" class="col-form-label col-sm-2">Fecha de baja</label>
+        <div class="col-sm-6">
+          <input
+            type="date"
+            class="form-control"
+            [(ngModel)]="cliente.cus_febaja"
+            name=" cus_febaja"
+          />
+        </div>
+      </div>
+      <!-- fin cus_fecha de baja  -->
+
+      <!-- button create  -->
+      <div class="form-group row">
+        <div class="col-sm-6">
+          <button
+            class="btn btn-primary"
+            role="button"
+            (click)="create()"
+            *ngIf="!isExist; else elseBlock"
+          >
+            Registrar
+          </button>
+        </div>
+      </div>
+      <!-- fin button create  -->
+      <ng-template #elseBlock
+        ><button class="btn btn-primary" role="button" (click)="update()">
+          Editar
+        </button></ng-template
+      >
+
+      <br />
+      <br />
+    </form>
+  </div>
+</div>
