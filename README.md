@@ -12,9 +12,9 @@ para: SOFTCARIBBEAN
 Usando un árbol binario y una tabla de base de datos en MySQL, CRUD con backend JAVA SPRING (Test) y frontend en ANGULAR (Test)
 
 
-##**BackEnd. JAVA 11 SPRING 2.6.2 JPA**
+##BackEnd. JAVA 11 SPRING 2.6.2 JPA
 
-###**ÁRBOL BINARIO**
+###ÁRBOL BINARIO
 
 implementado con la case TreeMap de Java [clase TreeMap de Java](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html), adicionalmente se incluye en src/main/java/com/commons.
 clases desarroladas como research al ejercicio y de manera academica. pero no se usaron para el funcionamiento 
