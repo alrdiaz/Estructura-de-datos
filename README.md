@@ -24,19 +24,19 @@ balanceado red-black.
 
 ### DATABASE
 
-* application.properties
+*application.properties*
 
 - crear base datos segùn archivo src/main/resorces/application.properties o modificar el mismo para la creación de la base de datos.
 
 - Las tablas se crearan automaticamente al inicio del servidor y se eliminaran al terminar para efectos de desarrollo, modificar en la linea 5 del application.properties:
 spring.jpa.hibernate.ddl-auto=create-drop
 
-* import.sql
+*import.sql*
 - carga de datos iniciales en la base de datos para pruebas y visualización al iniciar spring boot app
 
 #### MODEL
 
-* Entity class:
+*Entity class:*
 
 - libreria de ide y dependencia de proyecto "loombok" para la creación automatica de getters, setters y constructores.
 
@@ -46,11 +46,11 @@ spring.jpa.hibernate.ddl-auto=create-drop
 
 - Metodo isValidate(), para la validación de datos con expresiones regulares desde el backend.
 
-* DAO o Repository class:
+*DAO o Repository class:*
 
 - Interface que extiende de la clase interface generica CrudRepository con todos los metodos CRUD.
 
-* Servicios:
+*Servicios:*
 
 - Interface que extiende de la clase interface generica GenericService (puede ser usada para nuevas entidades) en com.commons con los metodos abstractos CRUD y extiende Serializable " que sirve solamente para especificar que todo el estado de un objeto instanciado podrá ser escrito o enviado en la red como una trama de bytes. "para la transferencia de datos.
 
@@ -59,19 +59,18 @@ spring.jpa.hibernate.ddl-auto=create-drop
 
 #### CONTROLLER
 
-* Api rest => @RestController
+*Api rest => @RestController*
 
-* Mapeo del endpoint =>@RequestMapping("/clientes") 
+*Mapeo del endpoint =>@RequestMapping("/clientes")*
 
-* CrossOrigin habilitado solo para Angular localhost:4200 y por defecto todos los metodos=>@CrossOrigin(origins= {"http://localhost:4200"})
+*CrossOrigin habilitado solo para Angular localhost:4200 y por defecto todos los metodos=>@CrossOrigin(origins= {"http://localhost:4200"})*
 
-* Implementa  ApplicationRunner para metodo run de instancia y carga del árbol binario con datos de la base de datos.
+*Implementa  ApplicationRunner para metodo run de instancia y carga del árbol binario con datos de la base de datos.*
 
 
+*Se inyecta el servicio la interface IClienteService y spring busca el primer candidato que implemente esta interface, es decir ClienteServiceImpl con todos los metodos CRUD*
 
-* Se inyecta el servicio la interface IClienteService y spring busca el primer candidato que implemente esta interface, es decir ClienteServiceImpl con todos los metodos CRUD
-
-* Manejo de errores incluidos en todos los metodos.
+*Manejo de errores incluidos en todos los metodos.*
 
 
 
@@ -83,13 +82,13 @@ spring.jpa.hibernate.ddl-auto=create-drop
 
 #### TEST
 
-* Datos
+*Datos*
 
 - Clase con datos para pruebas unitarias de los servicios.
 
-* Prueba unitaria para metodo isValidate()
+*Prueba unitaria para metodo isValidate()*
 
-* Pruebas unitarias para los Servicios al 100% de coverage.
+*Pruebas unitarias para los Servicios al 100% de coverage.*
 
 ## FrontEnd ANGULAR v13.1.0 - Boostrap v5.1.3 - sweetalert2 v11.3.3
 
