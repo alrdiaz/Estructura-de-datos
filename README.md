@@ -12,9 +12,9 @@ para: SOFTCARIBBEAN
 Usando un árbol binario y una tabla de base de datos en MySQL, CRUD con backend JAVA SPRING (Test) y frontend en ANGULAR (Test)
 
 
-##BackEnd. JAVA 11 SPRING 2.6.2 JPA
+## BackEnd. JAVA 11 SPRING 2.6.2 JPA
 
-###ÁRBOL BINARIO
+### ÁRBOL BINARIO
 
 implementado con la case TreeMap de Java [clase TreeMap de Java](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html), adicionalmente se incluye en src/main/java/com/commons.
 clases desarroladas como research al ejercicio y de manera academica. pero no se usaron para el funcionamiento 
@@ -22,7 +22,7 @@ del api rest, en su lugar se utilizo la calse de java treeMap que es en si una e
 balanceado red-black.
 
 
-###**DATABASE**
+### DATABASE
 
 *application.properties
 
@@ -34,7 +34,7 @@ spring.jpa.hibernate.ddl-auto=create-drop
 *import.sql
 -carga de datos iniciales en la base de datos para pruebas y visualización al iniciar spring boot app
 
-**MODEL**
+#### MODEL
 
 *Entity class:
 
@@ -57,7 +57,7 @@ spring.jpa.hibernate.ddl-auto=create-drop
 -Implementación inyecta la dependecia del repositorio y genera el metodo getDao para retornar el repositorio al que se le generan los metodos CRUD del GenericImpl. la implementación hereda los metodos de la clase generica GenericImpl que implementa la interface generica GenericService mencionada anteriormente sobreescribiendo los metodos abstractos.
 
 
-###**CONTROLLER**
+#### CONTROLLER
 
 *Api rest => @RestController
 
@@ -82,7 +82,7 @@ spring.jpa.hibernate.ddl-auto=create-drop
 >3.  Consulta La consulta de un objeto se debe hacer contra el árbol binario y no directamente contra la base de datos. 
 >4.  Manejo de excepciones Debe tener un manejo personalizado de excepciones
 
-###**TEST**
+#### TEST
 
 *Datos
 
@@ -94,19 +94,19 @@ spring.jpa.hibernate.ddl-auto=create-drop
 
 ##**FrontEnd ANGULAR v13.1.0 - Boostrap v5.1.3 - sweetalert2 v11.3.3**
 
-###**Responsive**
+### Responsive
 
 -se utilizo diseño sencillo con grid y clases de boostrap para el despliege de la aplicación.
 
-###**Diseño**
+### Diseño
 
 -se utilizo sweetalert2 para el despliegue de mensajes de confirmación, alerta y error tipo modal ante los eventos en la interación copn el usuario.
 
-###**SPA** 
+### SPA
 
 - se utilizo patron de single page application con la implementación de rutas.
 
-###**TEST**
+### TEST
 
 -Se   realizo pruebas unitarias a los servicios del cliente y para la creación de los componentes.
 
