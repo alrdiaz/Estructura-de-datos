@@ -87,14 +87,28 @@ spring.jpa.hibernate.ddl-auto=create-drop
 2. metodo **getTree**
 * retorna [ResponseEntity ](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/ResponseEntity.html) con body y httpstatus:
 * en caso de tener valores el árbol binario el body sera listado de clase cliente y HttpStatus.OK
-* si esta vacio el body sera arreglo tipo HashMap con los errores almacenados y HttpStatus.NOT_FOUND
+* si esta vacio el body sera arreglo tipo [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) con los errores almacenados y HttpStatus.NOT_FOUND
 3. metodo **getAll**
 * ejecuta llamado al servicio getAll para obtener todos los registros de la base de datos  y retorna [ResponseEntity ](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/ResponseEntity.html) con body y httpstatus:
 * en caso de tener valores el body sera listado de clase cliente y HttpStatus.OK
-* si esta vacio el body sera arreglo tipo HashMap con los errores almacenados y HttpStatus.NOT_FOUND
+* si esta vacio el body sera arreglo tipo [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) con los errores almacenados y HttpStatus.NOT_FOUND
 * en caso de obetener error en la consulta a la base de datos el body sera el arreglo de errores en la consulta y HttpStatus.INTERNAL_SERVER_ERROR
 4. metodo **find**
-*
+* ejecuta llamado al servicio get(id) con argumento el id del cliente para obtener la base de datos su instancia de clase y retorna [ResponseEntity ](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/ResponseEntity.html) con body y httpstatus:
+* en caso de tener valores el body sera su instancia de clase cliente y HttpStatus.OK
+* si es null,  el body sera arreglo tipo [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) con los errores almacenados y HttpStatus.NOT_FOUND
+5. metodo **save**
+*  ejecuta llamado al servicio save(cliente) con argumento una instacia de clase cliente para guardar en  la base de datos y retorna [ResponseEntity ](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/ResponseEntity.html) con body y httpstatus:
+* en caso de de que el argumento de clase isvalidate sea diferente de null, el body sera sera arreglo tipo [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) con los errores almacenados y HttpStatus.BAD_REQUEST
+* si la nueva instacia de cliente no tiene numero de cliente o no esta en el arbol binario => se definira el nuemero de cliente como el consecutivo al ultimo registro del árbol y se guardara posteriormente en este mismo, luego se procede a ejecutar el servicio save. con respuesta postiva en body  la nueva instacia de clase cliente guardada en la base de datos y  HttpStatus.CREATED
+* si ocurre algun error al ejecutar el servicio save, el body sera arreglo tipo [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) con los errores almacenados y HttpStatus.INTERNAL_SERVER_ERROR
+6. metodo **update**
+* realiza la consulta del árbol en memoria del key:id del cliente a consultar, si es null el body sera arreglo tipo [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) con los errores almacenados y HttpStatus.NOT_FOUND
+* en caso de de que el argumento de clase isvalidate sea diferente de null, el body sera sera arreglo tipo [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) con los errores almacenados y HttpStatus.BAD_REQUEST
+* si es valido y la instacia ya existe en el árbol los atributos del RequestBody se asignan a la variable temporal con los datos encontrados en el árbol.
+luego se guardan los cambios en el árbol en memoria y luego se ejecuta el servicio save con los cambios. sin errores el body es  la nueva instacia de clase cliente guardada en la base de datos y  HttpStatus.CREATED
+* si ocurre algun error al ejecutar el servicio save, el body sera arreglo tipo [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) con los errores almacenados y HttpStatus.INTERNAL_SERVER_ERROR
+* 
 
 
 #### TEST
