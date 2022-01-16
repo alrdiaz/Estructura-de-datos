@@ -16,7 +16,7 @@ Usando un árbol binario y una tabla de base de datos en MySQL, CRUD con backend
 
 **ÁRBOL BINARIO**
 
-implementado con la case TreeMap de Java, adicionalmente se incluye en src/main/java/com/commons.
+implementado con la case TreeMap de Java [case TreeMap de Java](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html), adicionalmente se incluye en src/main/java/com/commons.
 clases desarroladas como research al ejercicio y de manera academica. pero no se usaron para el funcionamiento 
 del api rest, en su lugar se utilizo la calse de java treeMap que es en si una estructura de arbol binario 
 balanceado red-black.
@@ -59,11 +59,22 @@ spring.jpa.hibernate.ddl-auto=create-drop
 
 **CONTROLLER**
 
+*Api rest => @RestController
+
+*Mapeo del endpoint =>@RequestMapping("/clientes") 
+
+*CrossOrigin habilitado solo para Angular localhost:4200 y por defecto todos los metodos=>@CrossOrigin(origins= {"http://localhost:4200"})
+
+
 *Implementa  ApplicationRunner para metodo run de instancia y carga del árbol binario con datos de la base de datos.
+
+
+
+*Se inyecta el servicio la interface IClienteService y spring busca el primer candidato que implemente esta interface, es decir ClienteServiceImpl con todos los metodos CRUD
 
 *Manejo de errores incluidos en todos los metodos.
 
-*CrossOrigin habilitado solo para Angular localhost:4200 y por defecto todos los metodos.
+
 
 El back End debe realizar las siguientes operaciones.
 1. Inserción y actualización Al insertar o actualizar el objeto, debe primero agregarlo al árbol binario y luego almacenarlo a la base de datos. De esta forma los datos quedan en memoria almacenados en el árbol y en la base de datos de forma permanente.
