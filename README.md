@@ -108,8 +108,7 @@ spring.jpa.hibernate.ddl-auto=create-drop
 * si es valido y la instacia ya existe en el árbol los atributos del RequestBody se asignan a la variable temporal con los datos encontrados en el árbol.
 luego se guardan los cambios en el árbol en memoria y luego se ejecuta el servicio save con los cambios. sin errores el body es  la nueva instacia de clase cliente guardada en la base de datos y  HttpStatus.CREATED
 * si ocurre algun error al ejecutar el servicio save, el body sera arreglo tipo [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) con los errores almacenados y HttpStatus.INTERNAL_SERVER_ERROR
-* 
-
+7. metodo **delete**
 
 #### TEST
 
