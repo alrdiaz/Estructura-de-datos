@@ -80,6 +80,23 @@ spring.jpa.hibernate.ddl-auto=create-drop
 >3.  Consulta La consulta de un objeto se debe hacer contra el árbol binario y no directamente contra la base de datos. 
 >4.  Manejo de excepciones Debe tener un manejo personalizado de excepciones
 
+1. metodo **run**  
+* utiliza el servicio y realiza consulta de todos los registros en base de datos
+* mapea y carga en memoria árbol binario. <KEY, VALUE> KEY=id del cliente, VALUE=Instancia de clase cliente.
+* en caso de error retorna por consola mensaje de error.
+2. metodo **getTree**
+* retorna [ResponseEntity ](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/ResponseEntity.html) con body y httpstatus:
+* en caso de tener valores el árbol binario el body sera listado de clase cliente y HttpStatus.OK
+* si esta vacio el body sera arreglo tipo HashMap con los errores almacenados y HttpStatus.NOT_FOUND
+3. metodo **getAll**
+* ejecuta llamado al servicio getAll para obtener todos los registros de la base de datos  y retorna [ResponseEntity ](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/ResponseEntity.html) con body y httpstatus:
+* en caso de tener valores el body sera listado de clase cliente y HttpStatus.OK
+* si esta vacio el body sera arreglo tipo HashMap con los errores almacenados y HttpStatus.NOT_FOUND
+* en caso de obetener error en la consulta a la base de datos el body sera el arreglo de errores en la consulta y HttpStatus.INTERNAL_SERVER_ERROR
+4. metodo **find**
+*
+
+
 #### TEST
 
 *Datos*
