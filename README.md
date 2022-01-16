@@ -28,7 +28,7 @@ balanceado red-black.
 
 -crear base datos segùn archivo src/main/resorces/application.properties o modificar el mismo para la creación de la base de datos.
 
--Las tablas se crearan automaticamente al inicio del servidor y se eliminaran al terminar, modificar en la linea 5 del application.properties:
+-Las tablas se crearan automaticamente al inicio del servidor y se eliminaran al terminar para efectos de desarrollo, modificar en la linea 5 del application.properties:
 spring.jpa.hibernate.ddl-auto=create-drop
 
 *import.sql
@@ -38,21 +38,24 @@ spring.jpa.hibernate.ddl-auto=create-drop
 
 *Entity class:
 
--loombok para la creación automatica de getters, setters y constructores.
+-libreria de ide y dependencia de proyecto "loombok" para la creación automatica de getters, setters y constructores.
 
 -JPA como framework ORM para la interacción con base de datos en MySQL.
+
+-Validaciones por medio de anotaciones de validación de atributos.
 
 -Metodo isValidate(), para la validación de datos con expresiones regulares desde el backend.
 
 *DAO o Repository class:
 
--Interface que extiende de la clase CrudRepository con todos los metodos CRUD.
+-Interface que extiende de la clase interface generica CrudRepository con todos los metodos CRUD.
 
 *Servicios:
 
--Interface que extiende de la clase interface generica GenericService (puede ser usada para nuevas entidades) en com.commons con los metodos CRUD y extiende Serializable para la transferencia de datos.
+-Interface que extiende de la clase interface generica GenericService (puede ser usada para nuevas entidades) en com.commons con los metodos abstractos CRUD y extiende Serializable " que sirve solamente para especificar que todo el estado de un objeto instanciado podrá ser escrito o enviado en la red como una trama de bytes. "para la transferencia de datos.
 
--Implementación que extiende de la clase generica GenericImpl que implementa la interface generica mencionada anteriormente.
+-Implementación inyecta la dependecia del repositorio y genera el metodo getDao para retornar el repositorio al que se le generan los metodos CRUD del GenericImpl. la implementación hereda los metodos de la clase generica GenericImpl que implementa la interface generica GenericService mencionada anteriormente sobreescribiendo los metodos abstractos.
+
 
 **CONTROLLER**
 
