@@ -12,7 +12,7 @@
 **Usando un árbol binario y una tabla de base de datos en MySQL, CRUD con backend JAVA SPRING (Test) y frontend en ANGULAR (Test)**
 
 
-## BackEnd. JAVA 11 SPRING 2.6.2 JPA
+## BackEnd. JAVA 11 SPRING 2.6.2 [JPA](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#preface)
 
 ### ÁRBOL BINARIO
 
@@ -38,17 +38,17 @@ spring.jpa.hibernate.ddl-auto=create-drop
 
 *Entity class:*
 
-- libreria de ide y dependencia de proyecto "loombok" para la creación automatica de getters, setters y constructores.
+- libreria de ide y dependencia de proyecto [Lombok](https://projectlombok.org/) para la creación automatica de getters, setters y constructores.
 
 - JPA como framework ORM para la interacción con base de datos en MySQL.
 
 - Validaciones por medio de anotaciones de validación de atributos.
 
-- Metodo isValidate(), para la validación de datos con expresiones regulares desde el backend.
+- se crea Metodo isValidate(), para la validación de datos con expresiones regulares desde el backend. el cual returna mensajes de error.  se puede usar estas [alternativas de validación](https://reflectoring.io/bean-validation-with-spring-boot/)
 
 *DAO o Repository class:*
 
-- Interface que extiende de la clase interface generica CrudRepository con todos los metodos CRUD.
+- Interface que extiende de la clase interface generica [CrudRepository](https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/CrudRepository.html) con todos los metodos CRUD.
 
 *Servicios:*
 
@@ -65,7 +65,7 @@ spring.jpa.hibernate.ddl-auto=create-drop
 
 *CrossOrigin habilitado solo para Angular localhost:4200 y por defecto todos los metodos=>@CrossOrigin(origins= {"http://localhost:4200"})*
 
-*Implementa  ApplicationRunner para metodo run de instancia y carga del árbol binario con datos de la base de datos.*
+*Implementa => con el uso de la anotación @Component para =>  [ApplicationRunner](https://programmerclick.com/article/864032113/) para metodo run de instancia y carga del árbol binario con datos de la base de datos.*
 
 
 *Se inyecta el servicio la interface IClienteService y spring busca el primer candidato que implemente esta interface, es decir ClienteServiceImpl con todos los metodos CRUD*
@@ -90,7 +90,7 @@ spring.jpa.hibernate.ddl-auto=create-drop
 
 *Pruebas unitarias para los Servicios al 100% de coverage.*
 
-## FrontEnd ANGULAR v13.1.0 - Boostrap v5.1.3 - sweetalert2 v11.3.3
+## FrontEnd [ANGULAR v13.1.0](https://angular.io/start)  - [Boostrap v5.1.3](https://getbootstrap.com/) - [sweetalert2 v11.3.3](https://sweetalert2.github.io/)
 
 ### Responsive
 
