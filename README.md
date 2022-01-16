@@ -109,16 +109,23 @@ spring.jpa.hibernate.ddl-auto=create-drop
 luego se guardan los cambios en el árbol en memoria y luego se ejecuta el servicio save con los cambios. sin errores el body es  la nueva instacia de clase cliente guardada en la base de datos y  HttpStatus.CREATED
 * si ocurre algun error al ejecutar el servicio save, el body sera arreglo tipo [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) con los errores almacenados y HttpStatus.INTERNAL_SERVER_ERROR
 7. metodo **delete**
+* realiza la consulta del árbol en memoria del key:id del cliente a consultar, si es null el body sera arreglo tipo [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) con los errores almacenados y HttpStatus.NOT_FOUND
+* si se encuentra dentro del árbol primero se borra del mismo y luego se ejecuta el servicio delete. si existe algún error al ejecutar el servicio y posterior con la base de datos se agrega nuevamente al arbol y el body sera sera arreglo tipo [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) con los errores almacenados y HttpStatus.INTERNAL_SERVER_ERROR
+* si se ejecuta el servicio delete correctamenmte el body sera mensaje de exito y HttpStatus.OK.
 
-#### TEST
+#### TEST  [Junit](https://junit.org/junit5/docs/current/user-guide/) [Mockito]()
 
 *Datos*
 
 - Clase con datos para pruebas unitarias de los servicios.
 
 *Prueba unitaria para metodo isValidate()*
+- con la clase [Assert](https://junit.org/junit4/javadoc/4.8/org/junit/Assert.html) se verifica el valor esperado y el valor al ejecutar el metodo isValidate de la clase cliente de prueba.
 
 *Pruebas unitarias para los Servicios al 100% de coverage.*
+- @SpringBootTest para integrar todo el contexto de pruebas con junit y mockito
+- @BeforeEach para instanciar el ClienteDao (mock) que simulara el repositorio y el servicio a partir de este, antes de cada prueba.
+- para cada metodo de prueba, se declara el resultado para la ejecución del servicio con [when()y thenReturn()](https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#when-T-) 
 
 ## FrontEnd [ANGULAR v13.1.0](https://angular.io/start)  - [Boostrap v5.1.3](https://getbootstrap.com/) - [sweetalert2 v11.3.3](https://sweetalert2.github.io/)
 
