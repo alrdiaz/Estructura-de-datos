@@ -123,7 +123,8 @@ luego se guardan los cambios en el árbol en memoria y luego se ejecuta el servi
 - con la clase [Assert](https://junit.org/junit4/javadoc/4.8/org/junit/Assert.html) se verifica el valor esperado y el valor al ejecutar el metodo isValidate de la clase cliente de prueba.
 
 *Pruebas unitarias para los Servicios al 100% de coverage.*
-![image](https://user-images.githubusercontent.com/71915394/149701809-f452364c-1512-4ccd-8452-443f2c65f14a.png)
+![image](https://user-images.githubusercontent.com/71915394/149702137-c45e4b3b-77ab-4789-affc-ab42731eec0a.png)
+
 
 - @SpringBootTest para integrar todo el contexto de pruebas con junit y mockito
 - @BeforeEach para instanciar el ClienteDao (mock) que simulara el repositorio y el servicio a partir de este, antes de cada prueba.
@@ -133,17 +134,25 @@ luego se guardan los cambios en el árbol en memoria y luego se ejecuta el servi
 
 ## FrontEnd [ANGULAR v13.1.0](https://angular.io/start)  - [Boostrap v5.1.3](https://getbootstrap.com/) - [sweetalert2 v11.3.3](https://sweetalert2.github.io/)
 
-### Responsive
-
-- se utilizo diseño sencillo con grid y clases de boostrap para el despliege de la aplicación.
-
-### Diseño
-
-- se utilizo sweetalert2 para el despliegue de mensajes de confirmación, alerta y error tipo modal ante los eventos en la interación copn el usuario.
-
 ### SPA
 
-- se utilizo patron de single page application con la implementación de rutas.
+- se utilizo patron de single page application con la implementación de rutas dentro del archivo => *app.module.ts 
+**maqueta** => *app.component.html
+- header tipo fijo
+- Rutas
+- Footer
+
+### Responsive 
+- se utilizo diseño sencillo con grid y clases de [Boostrap v5.1.3](https://getbootstrap.com/)  instalado directamente en el proyecto para el despliege de la aplicación.
+
+### Diseño
+- se instalo en el proyecto sweetalert2  para el despliegue de mensajes de confirmación, alerta y error tipo modal ante los eventos en la interación con el usuario.
+
+### Componente Clientes 
+#### Modelo
+- clase cliente con los atributos a definir desde el lado del cliente.
+#### Servicios
+- getClientes()
 
 ### TEST
 
