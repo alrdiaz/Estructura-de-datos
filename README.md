@@ -151,12 +151,22 @@ luego se guardan los cambios en el árbol en memoria y luego se ejecuta el servi
 ### Componente Clientes 
 #### Modelo
 - clase cliente con los atributos a definir desde el lado del cliente.
-#### Servicios
-- getClientes()
+#### Servicios 
+*modulo [httpCLient](https://angular.io/api/common/http/HttpClient)
+*se definene como variables todos los endpoints a utilizar definidos en el controlador de la Api
+- getClientes()=>devuelve un observable y por defecto en formato json y se mapea a una lista de clientes a traves del metodo pipe.
+- create(cliente)=>devuelve un observable y por defecto en formato json y se castea a una clase cliente. a traves del metodo pipe se captura y muestra error.
+- getCliente(id)=> devuelve un observable y por defecto en formato json y se castea a una clase cliente. a traves del metodo pipe se captura y muestra error y se redirecciona a la pagina clientes.
+- update(cliente)=>devuelve un observable y por defecto en formato json y se castea a una clase cliente. a traves del metodo pipe se captura y muestra error.
+- delete(id)=>devuelve un observable y por defecto en formato json y se castea a una clase cliente.  a traves del metodo pipe se captura y muestra error.
+#### Form
+- Al iniciar componente se verifica según el parametro de la ruta activa la existencia con el id, y se suscribe la variable del componente cliente con el observable que retorna de la ejecuciòn del servicio getCliente.
+- metodo create(), genera fecha de registro y ejecuta el servicio create  y se suscribe la variable del componente cliente con el observable que retorna de la ejecuciòn del servicio create() y redirecciona a pagina clientes
+- metodo update(), ejecuta el servicio create con las actualizaciones. y se suscribe la variable del componente cliente con el observable que retorna de la ejecuciòn del servicio create() y redirecciona a pagina clientes
 
 ### TEST
 
-- Se   realizo pruebas unitarias a los servicios del cliente y para la creación de los componentes.
+- Se realizo pruebas unitarias a los servicios del cliente y para la creación de los componentes.
 
 
 
