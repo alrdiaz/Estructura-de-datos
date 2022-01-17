@@ -123,9 +123,13 @@ luego se guardan los cambios en el árbol en memoria y luego se ejecuta el servi
 - con la clase [Assert](https://junit.org/junit4/javadoc/4.8/org/junit/Assert.html) se verifica el valor esperado y el valor al ejecutar el metodo isValidate de la clase cliente de prueba.
 
 *Pruebas unitarias para los Servicios al 100% de coverage.*
+![image](https://user-images.githubusercontent.com/71915394/149701809-f452364c-1512-4ccd-8452-443f2c65f14a.png)
+
 - @SpringBootTest para integrar todo el contexto de pruebas con junit y mockito
 - @BeforeEach para instanciar el ClienteDao (mock) que simulara el repositorio y el servicio a partir de este, antes de cada prueba.
-- para cada metodo de prueba, se declara el resultado para la ejecución del servicio con [when()y thenReturn()](https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#when-T-) 
+- para cada metodo de prueba, se declara el resultado para la ejecución del servicio con [when()y thenReturn()](https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#when-T-)
+- se verifica el valor esperado y el valor retornado despues de la ejecuciòn del servicio **assertEquals**
+- se verifica que se ejecute el servicio [verify()](https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#1)
 
 ## FrontEnd [ANGULAR v13.1.0](https://angular.io/start)  - [Boostrap v5.1.3](https://getbootstrap.com/) - [sweetalert2 v11.3.3](https://sweetalert2.github.io/)
 
