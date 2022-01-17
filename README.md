@@ -164,9 +164,10 @@ luego se guardan los cambios en el árbol en memoria y luego se ejecuta el servi
 - metodo create(), genera fecha de registro y ejecuta el servicio create  y se suscribe la variable del componente cliente con el observable que retorna de la ejecuciòn del servicio create() y redirecciona a pagina clientes
 - metodo update(), ejecuta el servicio create con las actualizaciones. y se suscribe la variable del componente cliente con el observable que retorna de la ejecuciòn del servicio create() y redirecciona a pagina clientes
 
-### TEST
+### TEST [Jasmine](https://jasmine.github.io/) -  [Karma v 6.3.9](https://angular.io/guide/testing)
 
-- Se realizo pruebas unitarias a los servicios del cliente y para la creación de los componentes.
+- Prueba para creación de los componentes.
+- Pruebas unitarias a los servicios del cliente
 
 
 
