@@ -1,4 +1,4 @@
-# Estructura-de-datos
+# Estructura de datos
 
 **branch** alrdiaz-BACKEND
 
