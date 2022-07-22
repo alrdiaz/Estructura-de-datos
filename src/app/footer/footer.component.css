@@ -1,0 +1,23 @@
+.footer {
+  position: fixed;
+  bottom: 0px;
+  height: 60px;
+  width: 100%;
+}
+ul {
+  list-style-type: none;
+  text-align: center;
+}
+li {
+  display: inline;
+}
+
+a {
+  color: white;
+  padding: 0 4px;
+  text-decoration: none;
+}
+
+a:hover {
+  color: grey;
+}

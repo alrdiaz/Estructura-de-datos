@@ -1,0 +1,66 @@
+<div class="card mb-3 border-0">
+  <div class="card-body text-primary">
+    <h5 class="card-title">Listado de clientes</h5>
+    <div class="my-2 text-left">
+      <br />
+      <button
+        class="btn btn-rounded btn-primary"
+        type="button"
+        routerLink="../clientes/form"
+      >
+        Crear Cliente
+      </button>
+    </div>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>id</th>
+          <th>nombres</th>
+          <th>apellidos</th>
+          <th>email</th>
+          <th>celular</th>
+          <th>Editar</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of clientes">
+          <td>
+            <button
+              [routerLink]="['/clientes/detail', cliente.nmid]"
+              class="btn btn-success btn-sm"
+            >
+              {{ cliente.cus_nmcliente }}
+            </button>
+          </td>
+          <td>{{ cliente.nmid }}</td>
+          <td>{{ cliente.cus_dsnombres }}</td>
+          <td>{{ cliente.cus_dsapellidos }}</td>
+          <td>{{ cliente.cus_dscorreo }}</td>
+          <td>{{ cliente.cus_cdcelular }}</td>
+          <td>
+            <button
+              type="button"
+              name="edit"
+              [routerLink]="['/clientes/form', cliente.nmid]"
+              class="btn btn-primary"
+            >
+              Editar
+            </button>
+          </td>
+          <td>
+            <button
+              type="button"
+              name="delete"
+              (click)="delete(cliente)"
+              class="btn btn-danger"
+            >
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

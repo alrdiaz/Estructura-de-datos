@@ -1,0 +1,53 @@
+<div class="card bg-dark text-white">
+  <div class="card-header">{{ tittle }}</div>
+  <div class="card-body">
+    <h5 style="text-align: center">
+      {{ cliente.cus_dsnombres }} {{ cliente.cus_dsapellidos }}
+    </h5>
+    <h6>Cedula: {{ cliente.nmid }}</h6>
+    <h6>Dirección: {{ cliente.cus_dsdireccion }}</h6>
+    <h6>Email: {{ cliente.cus_dscorreo }}</h6>
+    <h6>Teléfono: {{ cliente.cus_cdtelefono }}</h6>
+    <h6>Teléfono alternativo: {{ cliente.cus_cdtelefonoalter }}</h6>
+    <h6>Teléfono celular: {{ cliente.cus_cdcelular }}</h6>
+    <h6>Número Cargo: {{ cliente.cus_nmcargo }}</h6>
+    <h6>Cargo: {{ cliente.cus_dscargo }}</h6>
+    <h6>Número Ciudad (zipcode): {{ cliente.cus_nmciudad }}</h6>
+    <h6>Ciudad: {{ cliente.cus_dsciudad }}</h6>
+    <h6>Fecha de nacimiento: {{ cliente.cus_fenacimiento }}</h6>
+    <h6>Genero: {{ cliente.cus_genero }}</h6>
+    <h6>Número Comunidad: {{ cliente.cus_nmcomunidad }}</h6>
+    <h6>Comunidad: {{ cliente.cus_dscomunidad }}</h6>
+    <h6>Empresa: {{ cliente.cus_dsempresalabora }}</h6>
+    <h6>Número División: {{ cliente.cus_nmdivision }}</h6>
+    <h6>División: {{ cliente.cus_dsdivision }}</h6>
+    <h6>Número País: {{ cliente.cus_nmpais }}</h6>
+    <h6>País: {{ cliente.cus_dspais }}</h6>
+    <h6>Hobbies: {{ cliente.cus_hobbies }}</h6>
+    <h6>Fecha de baja: {{ cliente.cus_febaja | date: "yyyy-MM-dd" }}</h6>
+
+    <div class="card-footer">
+      <small class="text-muted"
+        >Registrado: {{ cliente.cus_feregistro | date: "yyyy-MM-dd" }}</small
+      >
+    </div>
+    <div>
+      <button
+        type="button"
+        name="edit"
+        [routerLink]="['/clientes/form', cliente.nmid]"
+        class="btn btn-primary"
+      >
+        Editar
+      </button>
+      <button
+        type="button"
+        name="delete"
+        (click)="delete(cliente)"
+        class="btn btn-danger"
+      >
+        Eliminar
+      </button>
+    </div>
+  </div>
+</div>
